@@ -6,9 +6,10 @@ import { NavigationContainer } from '@react-navigation/native';
 
 import { createStackNavigator } from '@react-navigation/stack';
 
-//import ProductList from './product/ProductList';
+import ProductList from './src/product/ProductList';
 
 //import Click from './Click';
+
 
 
 
@@ -27,6 +28,55 @@ function HomeScreen({ navigation }) {
         onPress={() => navigation.navigate('Details')}
 
       />
+      <Button
+
+title="Go to ya"
+
+onPress={() => navigation.navigate('ya')}
+
+/>
+
+    </View>
+
+  );
+
+}
+function DetailsScreen({ navigation }) {
+
+  return (
+
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+
+      <Text>Details Screen</Text>
+
+      <Button
+
+      title="Go to Home"
+
+      onPress={() => navigation.navigate('Home')}
+
+    />
+
+    </View>
+
+  );
+
+}
+function yaScreen({ navigation }) {
+
+  return (
+
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+
+      <Text>hi Screen</Text>
+
+      <Button
+
+      title="Go to home"
+
+      onPress={() => navigation.navigate('home')}
+
+    />
 
     </View>
 
@@ -34,27 +84,6 @@ function HomeScreen({ navigation }) {
 
 }
 
-function DetailsScreen({ navigation }) {
-
-    return (
-
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-
-        <Text>Details Screen</Text>
-
-        <Button
-
-        title="Go to Home"
-
-        onPress={() => navigation.navigate('Home')}
-
-      />
-
-      </View>
-
-    );
-
-  }
 
 
 
@@ -73,7 +102,7 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
 
         <Stack.Screen name="Details" component={DetailsScreen} />
-
+        <Stack.Screen name="ya" component={yaScreen} />
       </Stack.Navigator>
 
     </NavigationContainer>
